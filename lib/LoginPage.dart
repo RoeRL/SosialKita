@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sosialkita/CreateAccPage.dart';
+import 'package:sosialkita/ListFootballTeam.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -70,7 +71,7 @@ class _LoginState extends State<Login> {
                onPressed: () {
                },
                style: TextButton.styleFrom(
-                 padding: EdgeInsets.fromLTRB(150, 0, 0, 0)
+                 padding: EdgeInsets.fromLTRB(100, 0, 0, 0)
                ),
                child: const Text('Forgot Password',),
              ),
@@ -80,11 +81,14 @@ class _LoginState extends State<Login> {
                  child: ElevatedButton(
                    child: const Text('Login'),
                    onPressed: () {
+                     if(emailController.text == 'admin@gmail.com' && passwordController.text == '123admin'){
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => const ListFootball()));
+                     }
                    },
                  )
              ),
              Container(
-               padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                child: Row(
                  children: <Widget>[
                    const Text('Does not have account?'),
